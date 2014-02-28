@@ -4,7 +4,8 @@
   "description": "IcedCoffeeScript compiler for broccoli",
   "main": "index.js",
   "scripts": {
-    "test": "broccoli build test/actual && node node_modules/.bin/mocha test/test.js"
+    "build": "rimraf test/actual && broccoli build test/actual",
+    "test": "npm run-script build && mocha --reporter spec test/test.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   "keywords": [
     "broccoli-plugin",
     "iced-coffee-script",
+    "coffeescript",
     "compiler",
     "altJS"
   ],
@@ -32,6 +34,7 @@
   },
   "devDependencies": {
     "broccoli": "^0.2.0",
-    "mocha": "^1.17.1"
+    "mocha": "^1.17.1",
+    "rimraf": "^2.2.6"
   }
 }
