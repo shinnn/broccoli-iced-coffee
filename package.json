@@ -32,11 +32,12 @@
   ],
   "dependencies": {
     "broccoli-filter": "^0.1.4",
-    "iced-coffee-script": "^1.7.1-a"
+    "iced-coffee-script": "^1.7.1-b"
   },
   "devDependencies": {
     "broccoli": "^0.4.1",
-    "mocha": "^1.18.0",
+    "mocha": "^1.18.2",
+    "q": "^1.0.1",
     "rimraf": "^2.2.6"
   }
 }
