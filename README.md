@@ -9,11 +9,11 @@
 
 ## Installation
 
+Install with [npm](https://www.npmjs.org/). (Make sure you have installed [Node](http://nodejs.org/).)
+
 ```
 npm i --save broccoli-iced-coffee
 ```
-
-Make sure you have installed [Node](http://nodejs.org/) before running this command.
 
 ## Example
 
