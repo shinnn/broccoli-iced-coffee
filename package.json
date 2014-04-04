@@ -4,8 +4,10 @@
   "description": "IcedCoffeeScript compiler for broccoli",
   "main": "index.js",
   "scripts": {
+    "lint": "jshint *.js test/*.js --reporter node_modules/jshint-stylish/stylish",
     "build": "rimraf test/actual && broccoli build test/actual",
-    "test": "npm run-script build && mocha --reporter spec test/test.js"
+    "pretest": "npm run-script lint && npm run-script build",
+    "test": "mocha --reporter spec test/test.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,8 @@
     "broccoli": "^0.6.0",
     "mocha": "^1.18.2",
     "q": "^2.0.1",
-    "rimraf": "^2.2.6"
+    "rimraf": "^2.2.6",
+    "jshint-stylish": "^0.1.5",
+    "jshint": "^2.5.0"
   }
 }
