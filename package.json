@@ -33,11 +33,11 @@
     "altjs"
   ],
   "dependencies": {
-    "broccoli-filter": "^0.1.5",
+    "broccoli-filter": "^0.1.6",
     "iced-coffee-script": "^1.7.1-b"
   },
   "devDependencies": {
-    "broccoli": "^0.6.0",
+    "broccoli": "^0.7.2",
     "mocha": "^1.18.2",
     "q": "^2.0.1",
     "rimraf": "^2.2.6",
