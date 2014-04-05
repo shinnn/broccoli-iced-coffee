@@ -2,8 +2,8 @@
 
 [![NPM version](https://badge.fury.io/js/broccoli-iced-coffee.svg)](http://badge.fury.io/js/broccoli-iced-coffee)
 [![Build Status](https://travis-ci.org/shinnn/broccoli-iced-coffee.svg?branch=master)](https://travis-ci.org/shinnn/broccoli-iced-coffee)
-[![Dependency Status](https://david-dm.org/shinnn/broccoli-iced-coffee.svg?theme=shields.io)](https://david-dm.org/shinnn/broccoli-iced-coffee)
-[![devDependency Status](https://david-dm.org/shinnn/broccoli-iced-coffee/dev-status.svg?theme=shields.io)](https://david-dm.org/shinnn/broccoli-iced-coffee#info=devDependencies)
+[![Dependency Status](https://david-dm.org/shinnn/broccoli-iced-coffee.svg)](https://david-dm.org/shinnn/broccoli-iced-coffee)
+[![devDependency Status](https://david-dm.org/shinnn/broccoli-iced-coffee/dev-status.svg)](https://david-dm.org/shinnn/broccoli-iced-coffee#info=devDependencies)
 
 [IcedCoffeeScript](http://maxtaco.github.io/coffee-script/) compiler for [Broccoli](https://github.com/joliss/broccoli)
 
