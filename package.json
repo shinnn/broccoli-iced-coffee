@@ -4,7 +4,7 @@
   "description": "IcedCoffeeScript compiler for broccoli",
   "main": "index.js",
   "scripts": {
-    "lint": "jshint *.js test/*.js --reporter node_modules/jshint-stylish/stylish",
+    "lint": "jshint {,test/}*.js --reporter node_modules/jshint-stylish/stylish",
     "build": "rimraf test/actual && broccoli build test/actual",
     "pretest": "npm run-script lint && npm run-script build",
     "test": "mocha --reporter spec test/test.js"
@@ -18,7 +18,12 @@
     "url": "https://github.com/shinnn"
   },
   "readmeFilename": "README.md",
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/shinnn/broccoli-iced-coffee/blob/master/LICENSE"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/shinnn/broccoli-iced-coffee/issues"
   },
