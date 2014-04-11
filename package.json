@@ -42,11 +42,11 @@
     "iced-coffee-script": "^1.7.1-b"
   },
   "devDependencies": {
-    "broccoli": "^0.7.2",
+    "broccoli": "^0.9.0",
+    "jshint": "^2.5.0",
+    "jshint-stylish": "^0.1.5",
     "mocha": "^1.18.2",
     "q": "^2.0.1",
-    "rimraf": "^2.2.6",
-    "jshint-stylish": "^0.1.5",
-    "jshint": "^2.5.0"
+    "rimraf": "^2.2.6"
   }
 }
