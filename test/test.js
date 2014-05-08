@@ -6,7 +6,7 @@ var Q = require('q');
 
 var readFile = Q.denodeify(fs.readFile);
 
-describe('broccoli-iced-coffee', function () {
+describe('broccoli-iced-coffee', function() {
   it('should compile IcedCoffeeScript', function() {
     return Q.all([
       readFile('test/actual/await.js'),
