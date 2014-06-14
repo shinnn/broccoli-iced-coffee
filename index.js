@@ -7,7 +7,7 @@ function ICSFilter(inputTree, options) {
   if (!(this instanceof ICSFilter)) {
     return new ICSFilter(inputTree, options);
   }
-  
+
   this.inputTree = inputTree;
   this.options = options || {};
 }
