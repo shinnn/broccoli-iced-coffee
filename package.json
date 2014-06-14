@@ -40,13 +40,13 @@
   ],
   "dependencies": {
     "broccoli-filter": "^0.1.6",
-    "iced-coffee-script": "^1.7.1-b"
+    "iced-coffee-script": "^1.7.1-f"
   },
   "devDependencies": {
-    "broccoli": "^0.12.2",
+    "broccoli": "^0.12.3",
     "jshint": "^2.5.1",
     "jshint-stylish": "^0.2.0",
-    "mocha": "^1.20.0",
+    "mocha": "^1.20.1",
     "q": "^2.0.1",
     "rimraf": "^2.2.8"
   }
