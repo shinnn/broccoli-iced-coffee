@@ -7,7 +7,7 @@
     "lint": "jshint *.js test/*.js --reporter node_modules/jshint-stylish/stylish",
     "build": "rimraf test/actual && broccoli build test/actual",
     "pretest": "${npm_package_scripts_lint} & npm run-script build",
-    "test": "mocha test/test.js --reporter spec --timeout 300",
+    "test": "node test/test.js | tap-spec",
     "posttest": "rimraf tmp"
   },
   "repository": {
@@ -47,10 +47,11 @@
   },
   "devDependencies": {
     "broccoli": "^0.12.3",
-    "jshint": "^2.5.2",
+    "jshint": "^2.5.5",
     "jshint-stylish": "^0.4.0",
-    "mocha": "^1.21.3",
-    "q": "^2.0.2",
-    "rimraf": "^2.2.8"
+    "read-files-promise": "^1.0.1",
+    "rimraf": "^2.2.8",
+    "tap-spec": "^1.0.0",
+    "tape": "^3.0.0"
   }
 }
