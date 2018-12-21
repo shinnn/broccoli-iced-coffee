@@ -4,3 +4,4 @@ language: node_js
 node_js: node
 env:
   global: FORCE_PERSISTENCE_IN_CI=true
+cache: npm
