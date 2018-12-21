@@ -1,6 +1,6 @@
 {
 	"name": "broccoli-iced-coffee",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "A Broccoli plugin to compile IcedCoffeeScript",
 	"repository": "shinnn/broccoli-iced-coffee",
 	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
