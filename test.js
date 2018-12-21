@@ -42,3 +42,19 @@ test('broccoli-iced-coffee', async t => {
 
 	t.end();
 });
+
+test('Argument validation', async t => {
+	t.throws(
+		() => new BroccoliIcedCoffee('dir/', {}, {}),
+		/^RangeError.*Expected 1 or 2 arguments \(<string\|Object>\[, <Object>\]\), but got 3 arguments\./u,
+		'should fail when it takes too many arguments.'
+	);
+
+	t.throws(
+		() => new BroccoliIcedCoffee(),
+		/^RangeError.*Expected 1 or 2 arguments \(<string\|Object>\[, <Object>\]\), but got no arguments\./u,
+		'should fail when it takes no arguments.'
+	);
+
+	t.end();
+});
