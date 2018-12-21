@@ -1,57 +1,46 @@
 {
-  "name": "broccoli-iced-coffee",
-  "version": "0.2.0",
-  "description": "IcedCoffeeScript compiler for broccoli",
-  "main": "index.js",
-  "scripts": {
-    "lint": "jshint *.js test/*.js --reporter node_modules/jshint-stylish/stylish",
-    "build": "rimraf test/actual && broccoli build test/actual",
-    "pretest": "${npm_package_scripts_lint} & npm run-script build",
-    "test": "node test/test.js | tap-spec",
-    "posttest": "rimraf tmp"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shinnn/broccoli-iced-coffee.git"
-  },
-  "author": {
-    "name": "Shinnosuke Watanabe",
-    "url": "https://github.com/shinnn"
-  },
-  "readmeFilename": "README.md",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/shinnn/broccoli-iced-coffee/blob/master/LICENSE"
-    }
-  ],
-  "bugs": {
-    "url": "https://github.com/shinnn/broccoli-iced-coffee/issues"
-  },
-  "homepage": "https://github.com/shinnn/broccoli-iced-coffee",
-  "keywords": [
-    "broccoli-plugin",
-    "iced",
-    "iced-coffee-script",
-    "coffeescript",
-    "language",
-    "compile",
-    "compiler",
-    "transpile",
-    "transpiler",
-    "altjs"
-  ],
-  "dependencies": {
-    "broccoli-filter": "^0.1.6",
-    "iced-coffee-script": "^1.7.1-f"
-  },
-  "devDependencies": {
-    "broccoli": "^0.12.3",
-    "jshint": "^2.5.5",
-    "jshint-stylish": "^0.4.0",
-    "read-files-promise": "^1.0.1",
-    "rimraf": "^2.2.8",
-    "tap-spec": "^1.0.0",
-    "tape": "^3.0.0"
-  }
+	"name": "broccoli-iced-coffee",
+	"version": "0.2.0",
+	"description": "A Broccoli plugin to compile IcedCoffeeScript",
+	"repository": "shinnn/broccoli-iced-coffee",
+	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+	"license": "MIT",
+	"scripts": {
+		"pretest": "eslint .",
+		"test": "nyc node test.js"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"broccoli-plugin",
+		"iced",
+		"iced-coffee-script",
+		"coffeescript",
+		"language",
+		"compile",
+		"compiler",
+		"transpile",
+		"transpiler"
+	],
+	"dependencies": {
+		"broccoli-persistent-filter": "^2.1.1",
+		"iced-coffee-script-3": "^111.1.1",
+		"json-stable-stringify": "^1.0.1"
+	},
+	"devDependencies": {
+		"@shinnn/eslint-config": "^6.8.7",
+		"broccoli-fixture": "^1.0.0",
+		"eslint": "^5.10.0",
+		"lodash": "^4.17.11",
+		"nyc": "^13.1.0",
+		"nyc-config-common": "^1.0.1",
+		"tape": "^4.9.1"
+	},
+	"eslintConfig": {
+		"extends": "@shinnn"
+	},
+	"nyc": {
+		"extends": "nyc-config-common"
+	}
 }

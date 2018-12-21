@@ -1,8 +1,8 @@
+if: branch !~ ^v\d
 language: node_js
-node_js:
-  - "0.10"
-  - "0.11"
-before_install:
-  - npm install -g broccoli-cli
-notifications:
-  email: false
+node_js: node
+env:
+  global: FORCE_PERSISTENCE_IN_CI=true
+matrix:
+  include:
+  - dist: trusty

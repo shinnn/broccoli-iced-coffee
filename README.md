@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/broccoli-iced-coffee.svg)](https://www.npmjs.com/package/broccoli-iced-coffee)
 [![Build Status](https://travis-ci.com/shinnn/broccoli-iced-coffee.svg?branch=master)](https://travis-ci.com/shinnn/broccoli-iced-coffee)
 
-A [Broccoli](https://github.com/broccolijs/broccoli) plugin to compile [IcedCoffeeScript](https://maxtaco.github.io/coffee-script/)
+A [Broccoli](https://github.com/broccolijs/broccoli) plugin to compile [IcedCoffeeScript](https://github.com/maxtaco/coffee-script/tree/iced3)
 
 ## Installation
 
@@ -13,27 +13,23 @@ A [Broccoli](https://github.com/broccolijs/broccoli) plugin to compile [IcedCoff
 npm install --save-dev broccoli-iced-coffee
 ```
 
-## Example
-
-```javascript
-const filterIcedCoffee = require('broccoli-iced-coffee');
-tree = filterIcedCoffee(tree, options);
-```
-
 ## API
 
 ```javascript
-const broccoliIcedCoffee = require('broccoli-iced-coffee');
+const BroccoliIcedCoffee = require('broccoli-iced-coffee');
 ```
 
-### broccoliIcedCoffee(tree, options)
+### class BroccoliIcedCoffee(*node* *[, options]*)
 
-#### options.bare
+*node*: `string` (directory path) or `Object` ([Broccoli node](https://github.com/broccolijs/broccoli/blob/master/docs/node-api.md#part-2-node-api-specification))  
+*options*: `Object` ([`compile()`](https://github.com/maxtaco/coffee-script/blob/v111.1.1/src/coffee-script.coffee#L59) options)
 
-Type: `boolean`  
-Default: `false`
+```javascript
+//Brocfile.js
+const BroccoliIcedCoffee = require('broccoli-iced-coffee');
 
-Compile without the top-level function wrapper.
+module.exports = new BroccoliCleanCss('path/to/iced/sources');
+```
 
 ## License
 

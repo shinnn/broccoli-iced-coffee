@@ -1,25 +1,36 @@
 'use strict';
 
-var Filter = require('broccoli-filter');
-var compileIcedCoffee = require('iced-coffee-script').compile;
+const BroccoliPersistentFilter = require('broccoli-persistent-filter');
+const {compile} = require('iced-coffee-script-3');
+const jsonStableStringify = require('json-stable-stringify');
 
-function ICSFilter(inputTree, options) {
-  if (!(this instanceof ICSFilter)) {
-    return new ICSFilter(inputTree, options);
-  }
+const internalOptions = Symbol('internalOptions');
+const optionHash = Symbol('optionHash');
 
-  this.inputTree = inputTree;
-  this.options = options || {};
+class IcedCoffeeFilter extends BroccoliPersistentFilter {
+	constructor(...args) {
+		super(...args);
+
+		this.inputTree = args.shift();
+		this[internalOptions] = args[0] || {};
+	}
+
+	baseDir() { // eslint-disable-line class-methods-use-this
+		return __dirname;
+	}
+
+	cacheKeyProcessString(string, relativePath) {
+		this[optionHash] = this[optionHash] || jsonStableStringify(this[internalOptions]);
+
+		return `${this[optionHash]}${super.cacheKeyProcessString(string, relativePath)}`;
+	}
+
+	processString(str) {
+		return compile(str, this[internalOptions]);
+	}
 }
 
-ICSFilter.prototype = Object.create(Filter.prototype);
-ICSFilter.prototype.constructor = ICSFilter;
+IcedCoffeeFilter.prototype.extensions = ['iced'];
+IcedCoffeeFilter.prototype.targetExtension = 'js';
 
-ICSFilter.prototype.extensions = ['iced'];
-ICSFilter.prototype.targetExtension = 'js';
-
-ICSFilter.prototype.processString = function(str) {
-  return compileIcedCoffee(str, this.options);
-};
-
-module.exports = ICSFilter;
+module.exports = IcedCoffeeFilter;
